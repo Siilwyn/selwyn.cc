@@ -8,8 +8,10 @@ services:
     volumes:
       - ./caddyfile:/etc/Caddyfile
       - ./dist:/srv
+      - /tmp/caddy:/root/.caddy
     ports:
-      - 80:3000
+      - 80:80
+      - 443:443
   cheers-receiver:
     image: cheers-receiver
     volumes:
