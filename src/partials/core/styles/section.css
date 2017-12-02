@@ -1,0 +1,36 @@
+@import 'variables.css';
+
+.section {
+    margin-bottom: 2.5em;
+}
+
+.section-title {
+    margin-right: 0.75rem;
+    margin-left: 0.75rem;
+}
+
+@media (--s-viewport) {
+    .section-title {
+        max-width: 15.829em;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+@media (--m-viewport) {
+    .section {
+        max-width: 80rem;
+        margin-right: auto;
+        margin-left: auto;
+        padding: 0 1.5rem;
+    }
+}
+
+@media (--l-viewport) {
+    .section-title {
+        max-width: 35em;
+        margin-right: 0;
+        margin-left: 0;
+        padding-left: 0;
+    }
+}

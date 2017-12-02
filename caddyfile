@@ -1,0 +1,6 @@
+localhost:3000
+
+ext .html
+
+proxy /cheers-receiver cheers-receiver:3293
+ratelimit /cheers-receiver 10 15 minute

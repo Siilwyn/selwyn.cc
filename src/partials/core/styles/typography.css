@@ -1,0 +1,94 @@
+@import 'variables.css';
+
+body {
+    background: var(--white);
+    font-family: Georgia, 'Times New Roman', serif;
+    line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    padding-top: 0.7em;
+    padding-bottom: 0.5em;
+    font-family: 'Century Gothic', sans-serif;
+    font-weight: inherit;
+    line-height: 1.2;
+}
+
+h1 {
+    padding-top: 0;
+    font-size: 3.157em;
+}
+
+h2 {
+    font-size: 2.369em;
+}
+
+h3 {
+    font-size: 1.777em;
+}
+
+h4 {
+    font-size: 1.333em;
+}
+
+h1 + h2,
+h2 + h3,
+h3 + h4 {
+    padding-top: 0;
+}
+
+p {
+    max-width: 37.5em;
+    padding-bottom: 1.3em;
+}
+
+small {
+    font-size: 0.75em;
+}
+
+a {
+    position: relative;
+    color: inherit;
+    text-decoration: underline;
+}
+
+a::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    transform: scaleX(0);
+    background-color: var(--brand-highlight);
+    content: "";
+    transition: all 0.3s ease-in-out 0s;
+    visibility: hidden;
+}
+
+a:enter::after {
+    transform: scaleX(1);
+    visibility: visible;
+}
+
+li {
+    list-style: none;
+}
+
+.highlight {
+    color: var(--brand-highlight);
+    font-weight: bold;
+}
+
+::selection {
+    background: var(--brand-highlight);
+    color: var(--white);
+}
+
+@media (--l-viewport) {
+    h2 {
+     font-size: 3em;
+    }
+}

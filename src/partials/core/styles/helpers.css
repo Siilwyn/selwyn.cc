@@ -1,0 +1,28 @@
+@import 'variables.css';
+
+.slanted::before, .slanted::after {
+    display: none;
+    position: absolute;
+    right: 0;
+    left: 0;
+    height: 50%;
+    backface-visibility: hidden;
+    background: inherit;
+    box-shadow: 1px -3px 4rem 1px rgba(0, 0, 0, 0.3);
+    content: '';
+    z-index: -1;
+}
+
+.slanted-top:before {
+    display: block;
+    top: 0;
+    transform: skewY(1.5deg);
+    transform-origin: 100% 0;
+}
+
+.slanted-bottom:after {
+    display: block;
+    bottom: 0;
+    transform: skewY(-1.5deg);
+    transform-origin: 100%;
+}

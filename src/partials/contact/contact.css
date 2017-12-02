@@ -1,0 +1,59 @@
+@import '../core/styles/variables.css';
+
+.contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 15em;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    background: var(--brand-light);
+    color: var(--white);
+}
+
+.contact-title {
+    display: none;
+}
+
+.contact-list {
+    font-size: 2rem;
+    text-align: left;
+}
+
+.contact-item {
+    display: flex;
+    padding: 0.5rem 0;
+}
+
+.contact-item::after {
+    display: none;
+}
+
+.contact-item > img {
+    width: 1em;
+    margin-top: 0.3rem;
+    margin-right: 1rem;
+}
+
+@media (--m-viewport) {
+    .contact {
+        min-height: 7.5em;
+        padding: 0;
+    }
+
+    .contact-list {
+        display: flex;
+        flex-direction: row;
+        flex-grow: 1;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+@media (--l-viewport) {
+    .contact-list {
+        max-width: 75rem;
+    }
+}

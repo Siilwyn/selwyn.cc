@@ -1,0 +1,20 @@
+version: '3'
+services:
+  caddy:
+    build:
+      context: github.com/abiosoft/caddy-docker.git
+      args:
+        plugins: ratelimit
+    volumes:
+      - ./caddyfile:/etc/Caddyfile
+      - ./dist:/srv
+    ports:
+      - 80:3000
+  cheers-receiver:
+    image: cheers-receiver
+    volumes:
+      - ./cheers-db:/app/cheers-db
+    environment:
+      LEVELDOWN_DB: '/app/cheers-db'
+    ports:
+      - 3293:3293

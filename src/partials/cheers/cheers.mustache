@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="/css/cheers.css">
+<script async src="/js/cheers.js"></script>
+
+<div class="cheers" id="cheers">
+    <form class="cheers-form" data-cheers action="/cheers-receiver" method="post">
+        <label class="cheers-info" for="cheers">Say<br>cheers</label>
+        <input type="hidden" name="key" id="cheers" value="{{> slug }}">
+        <button class="cheers-button" type="submit" data-cheers-submit>╰(◕ᗜ◕)╯</button>
+        <p class="cheers-info cheers-count-info" data-cheers-count-info>
+            <span class="cheers-count" data-cheers-count></span>
+            &nbsp;cheers<br>and counting
+        </p>
+    </form>
+    <div class="count-send" id="count-send">
+        Thanks, your cheers is appreciated!
+    </div>
+</div>

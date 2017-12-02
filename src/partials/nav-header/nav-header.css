@@ -1,0 +1,66 @@
+@import "../core/styles/variables.css";
+
+.nav-header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background: transparent;
+    z-index: 1;
+}
+
+.nav-header-items-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.nav-header-item {
+    display: inline-flex;
+    flex-basis: 40%;
+    justify-content: flex-start;
+    padding: 1rem;
+    font-size: 1.1em;
+    white-space: nowrap;
+}
+
+.nav-header-item > a {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    border-bottom: 2px solid #32A9C7;
+    color: #f0f7ff;
+    text-decoration: none;
+    transition: border-color 0.3s ease-out;
+}
+
+.nav-header-item > a:enter {
+    border-color: #d4642c;
+}
+
+.nav-header-item > a::before {
+    /*margin: 0 0.2em 0 0;*/
+    margin-right: 0.2em;
+    color: #32a9c7;
+    font-size: 1.3em;
+    content: '//';
+}
+
+.nav-header-item > a::after {
+    bottom: -2px;
+}
+
+@media (--s-viewport) {
+    .nav-header-item {
+        flex-basis: auto;
+    }
+}
+
+@media (--m-viewport) {
+    .nav-header-items-container{
+        justify-content: center;
+    }
+
+    .nav-header-item {
+        padding: 2rem;
+    }
+}

@@ -1,0 +1,15 @@
+:root {
+  --black: #121313;
+  --brand-alt: #3a3335;
+  --brand-default: #1f7b8d;
+  --brand-light: #2fa9c7;
+  --brand-highlight: #d1642c;
+  --white: #f6f9fa;
+}
+
+@custom-media --xs-viewport (min-width: 20em);
+/* colors */
+@custom-media --s-viewport (min-width: 39em);
+@custom-media --m-viewport (min-width: 50em);
+@custom-media --l-viewport (min-width: 78em);
+@custom-media --xl-viewport (min-width: 100em);

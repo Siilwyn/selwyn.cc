@@ -1,0 +1,30 @@
+<!doctype html>
+
+<html lang="en">
+
+{{> ../partials/head/head }}
+
+<body>
+
+    {{> ../partials/nav-header/nav-header }}
+
+    {{> ../partials/header/header }}
+
+    <link rel="stylesheet" href="/css/writing.css">
+
+    <div class="writing-header">
+        <h1 class="writing-title">{{ title }}</h1>
+        <time class="writing-date">{{ date }}</time>
+    </div>
+
+    <main class="writing-content">
+
+        {{> writing-content }}
+
+    </main>
+
+    {{> ../partials/cheers/cheers }}
+
+</body>
+
+</html>
