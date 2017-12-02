@@ -49,6 +49,10 @@ const paths = {
     src: './src/writings/*.md',
     template: './src/templates/writing.mustache',
     dist: './dist/writings/',
+  },
+  meta: {
+    src: './src/meta/*',
+    dist: './dist',
   }
 };
 
@@ -106,6 +110,19 @@ gulp.task('build:media', function () {
     .pipe(gulp.dest(paths.media.dist));
 });
 
+gulp.task('build:fonts', function () {
+  return gulp.src(paths.fonts.src, {
+      since: gulp.lastRun('build:fonts'),
+    })
+    .pipe(gulp.dest(paths.fonts.dist));
+});
+
+gulp.task('build:meta', function () {
+  return gulp.src(paths.meta.src, {
+      since: gulp.lastRun('build:meta'),
+    })
+    .pipe(gulp.dest(paths.meta.dist));
+});
 
 gulp.task('build:writings', function () {
   return gulp.src(paths.writings.src)
@@ -140,6 +157,8 @@ gulp.task('build', gulp.parallel([
   'build:css',
   'build:js',
   'build:media',
+  'build:fonts',
+  'build:meta',
   'build:writings',
 ]));
 
@@ -190,13 +209,6 @@ gulp.task('watch', gulp.parallel([
   'watch:writings',
 ]));
 
-gulp.task('format:fonts', function () {
-  return gulp.src(paths.fonts.src, {
-      since: gulp.lastRun('build:css'),
-    })
-    .pipe(gulp.dest(paths.fonts.dist));
-});
-
 gulp.task('format:css', function () {
   return gulp.src(paths.css.src, {
       since: gulp.lastRun('build:css'),
@@ -213,7 +225,6 @@ gulp.task('format:css', function () {
 });
 
 gulp.task('format', gulp.parallel([
-  'format:fonts',
   'format:css',
 ]));
 
