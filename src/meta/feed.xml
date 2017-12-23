@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"
+      xml:lang="en">
+
+  <title>Selwyn's Writings</title>
+  <id>https://selwyn.cc/feed</id>
+  <link rel="self" href="/feed" />
+  <updated>2017-12-22T19:10:33.150Z</updated>
+
+  <entry>
+    <id>https://selwyn.cc/writings/your-own-secure-linux-box</id>
+    <title>Setting up a secure Linux server</title>
+    <updated>2017-07-25T19:10:33.150Z</updated>
+    <summary>
+      Spinning up a fresh new server gives a shiny clean slate to work from. I like to have my own controlled server but a new Linux box is often pretty open to the rest of the world. Securing it is a daunting task the first time. Following is a guide aimed to help with the security essentials. From connecting to the server to setting configuration rules. For this guide I will be using Ubuntu but for most Linux distributions the same applies. Note that almost all server commands need superuser access. To prevent typing `sudo` over and over again, use `sudo -s` in the server beforehand to run a shell with root privileges.
+    </summary>
+  </entry>
+
+</feed>

@@ -14,7 +14,17 @@
 
     <div class="writing-header">
         <h1 class="writing-title">{{ title }}</h1>
-        <time class="writing-date">{{ date }}</time>
+        <time class="writing-date">
+            {{ date }}
+            /
+            <a
+                class="writing-rss"
+                rel="alternate"
+                type="application/rss+xml"
+                href="/feed">
+                RSS Feed
+            </a>
+        </time>
     </div>
 
     <main class="writing-content">

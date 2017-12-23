@@ -10,21 +10,21 @@
 
 .writing-header {
     padding: 1.25rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .writing-title {
     font-family: 'Elrotex';
     font-size: 4em;
     line-height: 2em;
-    text-align: center;
 }
 
 .writing-date {
-    display: block;
     color: var(--brand-default);
     font-family: monospace;
     font-size: 1.2em;
-    text-align: center;
 }
 
 .writing-content p {
@@ -42,6 +42,10 @@
     padding: 0.75em 1em;
     background: var(--black);
     color: var(--white);
+}
+
+.writing-content table {
+    margin-bottom: 1em;
 }
 
 @font-face {
