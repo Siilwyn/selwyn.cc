@@ -12,6 +12,7 @@ services:
     ports:
       - 80:80
       - 443:443
+    restart: always
   cheers-receiver:
     image: cheers-receiver
     volumes:
@@ -20,3 +21,4 @@ services:
       LEVELDOWN_DB: '/app/cheers-db'
     ports:
       - 3293:3293
+    restart: always
