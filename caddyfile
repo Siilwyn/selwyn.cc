@@ -7,8 +7,7 @@ selwyn.cc {
 
   redir www.selwyn.cc https://selwyn.cc
 
-  ext .html
-  gzip
+  ext .html .xml
 
   header / {
     -Server
@@ -22,4 +21,7 @@ selwyn.cc {
 
   proxy /cheers-receiver cheers-receiver:3293
   ratelimit /cheers-receiver 10 15 minute
+  gzip {
+    not /cheers-receiver
+  }
 }
