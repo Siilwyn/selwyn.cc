@@ -2,6 +2,7 @@
 
 .slanted::before, .slanted::after {
     display: none;
+    z-index: -1;
     position: absolute;
     right: 0;
     left: 0;
@@ -10,7 +11,6 @@
     background: inherit;
     box-shadow: 1px -3px 4rem 1px rgba(0, 0, 0, 0.3);
     content: '';
-    z-index: -1;
 }
 
 .slanted-top:before {

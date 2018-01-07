@@ -6,10 +6,10 @@
 
 .about::after {
    display: block;
+   visibility: hidden;
    height: 0;
    clear: both;
    content: "";
-   visibility: hidden;
 }
 
 .about-portrait {
@@ -31,8 +31,8 @@
     border: 0.3rem solid var(--brand-default);
     font-size: 1.3em;
     text-decoration: none;
-    transition: border-color 0.4s ease;
     vertical-align: middle;
+    transition: border-color 0.4s ease;
 }
 
 .about-more:enter {
