@@ -17,9 +17,9 @@
   "license": "All Rights Reserved",
   "private": true,
   "devDependencies": {
-    "autoprefixer": "^7.2.4",
-    "browser-sync": "^2.18.8",
-    "css-declaration-sorter": "^3.0.0",
+    "autoprefixer": "^8.1.0",
+    "browser-sync": "^2.23.6",
+    "css-declaration-sorter": "^3.0.1",
     "gulp": "^4.0.0",
     "gulp-gray-matter": "^3.0.1",
     "gulp-htmlmin": "^4.0.0",
@@ -31,8 +31,8 @@
     "gulp-tap": "^1.0.1",
     "postcss-clean": "^1.0.0",
     "postcss-custom-media": "^6.0.0",
-    "postcss-custom-properties": "^6.2.0",
-    "postcss-import": "^11.0.0",
+    "postcss-custom-properties": "^7.0.0",
+    "postcss-import": "^11.1.0",
     "postcss-pseudo-class-enter": "^3.0.1"
   }
 }
