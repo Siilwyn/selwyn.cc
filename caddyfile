@@ -20,7 +20,7 @@ selwyn.cc {
   }
 
   proxy /cheers-receiver cheers-receiver:3293
-  ratelimit /cheers-receiver 10 15 minute
+  ratelimit post /cheers-receiver 5 5 minute
   gzip {
     not /cheers-receiver
   }
