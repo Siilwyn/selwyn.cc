@@ -5,7 +5,7 @@ const gulp = require('gulp');
 const path = require('path');
 
 const markdown = require('gulp-markdown');
-const matter = require('gulp-gray-matter');
+const matter = require('front-matter');
 const mustache = require('gulp-mustache');
 const htmlmin = require('gulp-htmlmin');
 const postcss = require('gulp-postcss');
@@ -126,14 +126,18 @@ gulp.task('build:meta', function () {
 
 gulp.task('build:writings', function () {
   return gulp.src(paths.writings.src)
-    .pipe(matter())
+    .pipe(tap(function (file) {
+      const parsedContents = matter(String(file.contents));
+      file.contents = Buffer.from(parsedContents.body);
+      file.attributes = parsedContents.attributes;
+    }))
     .pipe(markdown())
     .pipe(tap(function (file, t) {
       const filePath = path.parse(file.path);
 
       return gulp.src(paths.writings.template)
         .pipe(mustache(
-          file.data,
+          file.attributes,
           {},
           {
             'writing-content': String(file.contents),

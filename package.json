@@ -9,6 +9,7 @@
     "build:html": "gulp build:html",
     "build:css": "gulp build:css",
     "build:js": "gulp build:js",
+    "build:writings": "gulp build:writings",
     "watch": "gulp watch",
     "server": "gulp server",
     "clean": "find ./dist ! -type d -delete"
@@ -20,8 +21,8 @@
     "autoprefixer": "^8.1.0",
     "browser-sync": "^2.23.6",
     "css-declaration-sorter": "^3.0.1",
+    "front-matter": "^2.3.0",
     "gulp": "^4.0.0",
-    "gulp-gray-matter": "^3.0.1",
     "gulp-htmlmin": "^4.0.0",
     "gulp-image": "^4.1.0",
     "gulp-markdown": "^2.0.1",
