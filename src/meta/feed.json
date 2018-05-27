@@ -1,0 +1,22 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Selwyn's writings",
+    "home_page_url": "https://selwyn.cc/",
+    "feed_url": "https://selwyn.cc/feed.json",
+    "items": [
+        {
+            "id": "docker-node-exit-codes",
+            "url": "https://selwyn.cc/writings/docker-node-exit-codes",
+            "title": "Docker, Node and exit codes",
+            "content_text": "Recently I discovered my Node.js server running in a Docker container not exiting properly. It dropped open connections and left the database connection open. Simple to solve, I thought, listen and handle the exit signal with `process.on('SIGINT')`. Yet the existence of this post, like a bad movie trailer giving away the plot, spoils the surprise it is not that simple.",
+            "date_published": "2017-12-23T00:00:00.000Z"
+        },
+        {
+            "id": "your-own-secure-linux-box",
+            "url": "https://selwyn.cc/writings/your-own-secure-linux-box",
+            "title": "Setting up a secure Linux server",
+            "content_text": "Spinning up a fresh new server gives a shiny clean slate to work from. I like to have my own controlled server but a new Linux box is often pretty open to the rest of the world. Securing it is a daunting task the first time. Following is a guide aimed to help with the security essentials. From connecting to the server to setting configuration rules. For this guide I will be using Ubuntu but for most Linux distributions the same applies. Note that almost all server commands need superuser access. To prevent typing `sudo` over and over again, use `sudo -s` in the server beforehand to run a shell with root privileges.",
+            "date_published": "2017-07-25T00:00:00.000Z"
+        }
+    ]
+}
