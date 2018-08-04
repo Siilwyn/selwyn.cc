@@ -18,9 +18,9 @@
   "license": "All Rights Reserved",
   "private": true,
   "devDependencies": {
-    "autoprefixer": "^8.1.0",
+    "autoprefixer": "^9.0.0",
     "browser-sync": "^2.23.6",
-    "css-declaration-sorter": "^3.0.1",
+    "css-declaration-sorter": "^4.0.0",
     "front-matter": "^2.3.0",
     "gulp": "^4.0.0",
     "gulp-htmlmin": "^4.0.0",
@@ -33,7 +33,7 @@
     "postcss-clean": "^1.0.0",
     "postcss-custom-media": "^6.0.0",
     "postcss-custom-properties": "^7.0.0",
-    "postcss-import": "^11.1.0",
+    "postcss-import": "^12.0.0",
     "postcss-pseudo-class-enter": "^3.0.1"
   }
 }
