@@ -1,6 +1,5 @@
 'use strict';
 
-
 const gulp = require('gulp');
 const path = require('path');
 
@@ -53,23 +52,28 @@ const paths = {
   meta: {
     src: './src/meta/*',
     dist: './dist',
-  }
+  },
 };
 
-gulp.task('build:html', function () {
-  return gulp.src(paths.html.src)
+gulp.task('build:html', function() {
+  return gulp
+    .src(paths.html.src)
     .pipe(mustache({}))
-    .pipe(htmlmin({
-      collapseWhitespace: true,
-    }))
-    .pipe(rename({
-      extname: '.html',
-    }))
+    .pipe(
+      htmlmin({
+        collapseWhitespace: true,
+      })
+    )
+    .pipe(
+      rename({
+        extname: '.html',
+      })
+    )
     .pipe(gulp.dest(paths.html.dist))
     .pipe(server.stream());
 });
 
-gulp.task('build:css', function () {
+gulp.task('build:css', function() {
   var cssProcessors = [
     cssImport(),
     customProperties(),
@@ -81,98 +85,118 @@ gulp.task('build:css', function () {
     pseudoClassEnter(),
   ];
 
-  return gulp.src(paths.css.src, {
-      since: gulp.lastRun('build:css')
+  return gulp
+    .src(paths.css.src, {
+      since: gulp.lastRun('build:css'),
     })
     .pipe(postcss(cssProcessors))
-    .pipe(rename({
-      dirname: '',
-    }))
+    .pipe(
+      rename({
+        dirname: '',
+      })
+    )
     .pipe(gulp.dest(paths.css.dist))
     .pipe(server.stream());
 });
 
-gulp.task('build:js', function () {
-  return gulp.src(paths.js.src, {
-      since: gulp.lastRun('build:js')
+gulp.task('build:js', function() {
+  return gulp
+    .src(paths.js.src, {
+      since: gulp.lastRun('build:js'),
     })
-    .pipe(rename({
-      dirname: '',
-    }))
+    .pipe(
+      rename({
+        dirname: '',
+      })
+    )
     .pipe(gulp.dest(paths.js.dist));
 });
 
-gulp.task('build:media', function () {
-  return gulp.src(paths.media.src, {
-      since: gulp.lastRun('build:media')
+gulp.task('build:media', function() {
+  return gulp
+    .src(paths.media.src, {
+      since: gulp.lastRun('build:media'),
     })
     .pipe(image())
     .pipe(gulp.dest(paths.media.dist));
 });
 
-gulp.task('build:fonts', function () {
-  return gulp.src(paths.fonts.src, {
+gulp.task('build:fonts', function() {
+  return gulp
+    .src(paths.fonts.src, {
       since: gulp.lastRun('build:fonts'),
     })
     .pipe(gulp.dest(paths.fonts.dist));
 });
 
-gulp.task('build:meta', function () {
-  return gulp.src(paths.meta.src, {
+gulp.task('build:meta', function() {
+  return gulp
+    .src(paths.meta.src, {
       since: gulp.lastRun('build:meta'),
     })
     .pipe(gulp.dest(paths.meta.dist));
 });
 
-gulp.task('build:writings', function () {
-  return gulp.src(paths.writings.src)
-    .pipe(tap(function (file) {
-      const parsedContents = matter(String(file.contents));
-      file.contents = Buffer.from(parsedContents.body);
-      file.attributes = parsedContents.attributes;
-    }))
+gulp.task('build:writings', function() {
+  return gulp
+    .src(paths.writings.src)
+    .pipe(
+      tap(function(file) {
+        const parsedContents = matter(String(file.contents));
+        file.contents = Buffer.from(parsedContents.body);
+        file.attributes = parsedContents.attributes;
+      })
+    )
     .pipe(markdown())
-    .pipe(tap(function (file, t) {
-      const filePath = path.parse(file.path);
+    .pipe(
+      tap(function(file, t) {
+        const filePath = path.parse(file.path);
 
-      return gulp.src(paths.writings.template)
-        .pipe(mustache(
-          file.attributes,
-          {},
-          {
-            'writing-content': String(file.contents),
-            'slug': filePath.name,
-          }
-        ))
-        .pipe(htmlmin({
-          collapseWhitespace: true,
-        }))
-        .pipe(rename({
-          basename: filePath.base,
-          extname: '',
-        }))
-        .pipe(gulp.dest(paths.writings.dist))
-        .pipe(server.stream());
-    }))
+        return gulp
+          .src(paths.writings.template)
+          .pipe(
+            mustache(
+              file.attributes,
+              {},
+              {
+                'writing-content': String(file.contents),
+                slug: filePath.name,
+              }
+            )
+          )
+          .pipe(
+            htmlmin({
+              collapseWhitespace: true,
+            })
+          )
+          .pipe(
+            rename({
+              basename: filePath.base,
+              extname: '',
+            })
+          )
+          .pipe(gulp.dest(paths.writings.dist))
+          .pipe(server.stream());
+      })
+    );
 });
 
-gulp.task('build', gulp.parallel([
-  'build:html',
-  'build:css',
-  'build:js',
-  'build:media',
-  'build:fonts',
-  'build:meta',
-  'build:writings',
-]));
+gulp.task(
+  'build',
+  gulp.parallel([
+    'build:html',
+    'build:css',
+    'build:js',
+    'build:media',
+    'build:fonts',
+    'build:meta',
+    'build:writings',
+  ])
+);
 
 gulp.task('watch:html', function(done) {
   gulp.watch(
-    [
-    paths.html.src,
-    paths.html.partials,
-    paths.js.src,
-    ],
+    [paths.html.src, paths.html.partials, paths.js.src],
     gulp.task('build:html')
   );
   done();
@@ -195,42 +219,40 @@ gulp.task('watch:media', function(done) {
 
 gulp.task('watch:writings', function(done) {
   gulp.watch(
-    [
-      paths.writings.src,
-      paths.html.partials,
-      paths.js.src,
-    ],
+    [paths.writings.src, paths.html.partials, paths.js.src],
     gulp.task('build:writings')
   );
   done();
 });
 
-gulp.task('watch', gulp.parallel([
-  'watch:html',
-  'watch:css',
-  'watch:js',
-  'watch:media',
-  'watch:writings',
-]));
+gulp.task(
+  'watch',
+  gulp.parallel([
+    'watch:html',
+    'watch:css',
+    'watch:js',
+    'watch:media',
+    'watch:writings',
+  ])
+);
 
-gulp.task('format:css', function () {
-  return gulp.src(paths.css.src, {
+gulp.task('format:css', function() {
+  return gulp
+    .src(paths.css.src, {
       since: gulp.lastRun('build:css'),
       base: './',
     })
-    .pipe(postcss(
-      [
+    .pipe(
+      postcss([
         declarationSorter({
           order: 'smacss',
         }),
-      ]
-    ))
+      ])
+    )
     .pipe(gulp.dest('.'));
 });
 
-gulp.task('format', gulp.parallel([
-  'format:css',
-]));
+gulp.task('format', gulp.parallel(['format:css']));
 
 gulp.task('server', function(done) {
   server.init({
@@ -238,7 +260,7 @@ gulp.task('server', function(done) {
       baseDir: './dist/',
       serveStaticOptions: {
         extensions: ['html'],
-      }
+      },
     },
     browser: 'chromium-browser',
   });
@@ -246,4 +268,7 @@ gulp.task('server', function(done) {
   done();
 });
 
-gulp.task('default', gulp.parallel('server', gulp.series('format', 'build', 'watch')));
+gulp.task(
+  'default',
+  gulp.parallel('server', gulp.series('format', 'build', 'watch'))
+);
