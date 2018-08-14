@@ -14,20 +14,17 @@
     "server": "gulp server",
     "clean": "find ./dist ! -type d -delete"
   },
-  "author": "Selwyn Versteeg",
-  "license": "All Rights Reserved",
-  "private": true,
   "devDependencies": {
-    "autoprefixer": "^9.0.0",
+    "autoprefixer": "^9.1.1",
     "browser-sync": "^2.23.6",
     "css-declaration-sorter": "^4.0.0",
     "front-matter": "^2.3.0",
     "gulp": "^4.0.0",
     "gulp-htmlmin": "^4.0.0",
     "gulp-image": "^4.1.0",
-    "gulp-markdown": "^2.0.1",
+    "gulp-markdown": "^3.0.0",
     "gulp-mustache": "^3.0.1",
-    "gulp-postcss": "^7.0.1",
+    "gulp-postcss": "^8.0.0",
     "gulp-rename": "^1.2.2",
     "gulp-tap": "^1.0.1",
     "postcss-clean": "^1.0.0",
@@ -35,5 +32,11 @@
     "postcss-custom-properties": "^7.0.0",
     "postcss-import": "^12.0.0",
     "postcss-pseudo-class-enter": "^3.0.1"
-  }
+  },
+  "engines": {
+    "node": ">9"
+  },
+  "author": "Selwyn <talk@selwyn.cc> (https://selwyn.cc/)",
+  "license": "All Rights Reserved",
+  "private": true
 }
