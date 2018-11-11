@@ -52,6 +52,7 @@ const paths = {
   meta: {
     src: './src/meta/*',
     dist: './dist',
+    feedTemplate: './src/meta/feed.json',
   },
 };
 
@@ -135,6 +136,33 @@ gulp.task('build:meta', function() {
       since: gulp.lastRun('build:meta'),
     })
     .pipe(gulp.dest(paths.meta.dist));
+});
+
+gulp.task('build:feed', function () {
+  return gulp.src(paths.writings.src)
+    .pipe(matter())
+    .pipe(markdown())
+    .pipe(tap(function (file, t) {
+      const filePath = path.parse(file.path);
+
+      return gulp.src(paths.meta.feedTemplate)
+        .pipe(mustache(
+          file.data,
+          {},
+          {
+            'writing-content': String(file.contents),
+            'slug': filePath.name,
+          }
+        ))
+        .pipe(htmlmin({
+          collapseWhitespace: true,
+        }))
+        .pipe(rename({
+          basename: filePath.base,
+          extname: '',
+        }))
+        .pipe(gulp.dest(paths.writings.dist));
+    }))
 });
 
 gulp.task('build:writings', function() {

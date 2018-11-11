@@ -27,6 +27,7 @@
     "gulp-postcss": "^8.0.0",
     "gulp-rename": "^1.2.2",
     "gulp-tap": "^1.0.1",
+    "highland": "^2.11.1",
     "postcss-clean": "^1.0.0",
     "postcss-custom-media": "^7.0.0",
     "postcss-custom-properties": "^8.0.0",
