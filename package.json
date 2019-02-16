@@ -15,23 +15,23 @@
     "clean": "find ./dist ! -type d -delete"
   },
   "devDependencies": {
-    "autoprefixer": "^9.1.1",
-    "browser-sync": "^2.23.6",
+    "autoprefixer": "^9.4.7",
+    "browser-sync": "^2.26.3",
     "css-declaration-sorter": "^4.0.0",
-    "front-matter": "^3.0.0",
+    "front-matter": "^3.0.1",
     "gulp": "^4.0.0",
     "gulp-htmlmin": "^5.0.0",
-    "gulp-image": "^4.1.0",
+    "gulp-image": "^4.4.1",
     "gulp-markdown": "^3.0.0",
-    "gulp-mustache": "^4.0.0",
+    "gulp-mustache": "^4.1.0",
     "gulp-postcss": "^8.0.0",
     "gulp-rename": "^1.2.2",
     "gulp-tap": "^1.0.1",
     "postcss-clean": "^1.0.0",
     "postcss-custom-media": "^7.0.0",
-    "postcss-custom-properties": "^8.0.0",
-    "postcss-import": "^12.0.0",
-    "postcss-pseudo-class-enter": "^3.0.1"
+    "postcss-custom-properties": "^8.0.9",
+    "postcss-import": "^12.0.1",
+    "postcss-pseudo-class-enter": "^5.0.0"
   },
   "engines": {
     "node": ">9"
