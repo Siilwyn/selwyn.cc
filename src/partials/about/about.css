@@ -12,10 +12,6 @@
    content: "";
 }
 
-.about-portrait {
-    margin-bottom: 1.3rem;
-}
-
 .about-title,
 .about-description {
     margin-right: 0.75rem;
@@ -45,14 +41,9 @@
     }
 
     .about-title,
-    .about-portrait,
     .about-description {
         margin-right: auto;
         margin-left: auto;
-    }
-
-    .about-portrait {
-        max-width: 37.5em;
     }
 }
 
@@ -72,10 +63,5 @@
         margin-right: 0;
         margin-left: 0;
         padding-left: 0;
-    }
-
-    .about-portrait {
-        margin: 0 1.3rem;
-        float: right;
     }
 }
