@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^9.4.7",
-    "browser-sync": "^2.26.3",
+    "browser-sync": "^2.26.7",
     "css-declaration-sorter": "^4.0.0",
     "front-matter": "^3.0.1",
     "gulp": "^4.0.0",
