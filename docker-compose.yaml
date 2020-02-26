@@ -1,5 +1,13 @@
 version: '3'
 services:
+  frontend:
+    working_dir: /frontend
+    build: .
+    volumes:
+      - ./:/frontend
+      - /frontend/node_modules
+    environment:
+      NODE_ENV: production
   caddy:
     build:
       context: github.com/abiosoft/caddy-docker.git
