@@ -117,7 +117,7 @@ gulp.task('build:media', function() {
     .src(paths.media.src, {
       since: gulp.lastRun('build:media'),
     })
-    .pipe(image())
+    .pipe(image({ concurrent: 1 }))
     .pipe(gulp.dest(paths.media.dist));
 });
 

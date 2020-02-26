@@ -1,14 +1,7 @@
 version: '3'
 services:
-  caddy:
-    build:
-      context: github.com/abiosoft/caddy-docker.git
-      args:
-        plugins: ratelimit
-    volumes:
-      - ./caddyfile:/etc/Caddyfile
-      - ./dist:/srv
-      - /tmp/caddy:/root/.caddy
+  website:
+    image: selwyncc
     ports:
       - 80:80
       - 443:443
