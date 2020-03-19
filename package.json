@@ -21,7 +21,7 @@
     "front-matter": "^3.1.0",
     "gulp": "^4.0.2",
     "gulp-htmlmin": "^5.0.0",
-    "gulp-image": "^6.0.0",
+    "gulp-image": "^6.1.0",
     "gulp-markdown": "^5.0.1",
     "gulp-mustache": "^4.1.2",
     "gulp-postcss": "^8.0.0",
