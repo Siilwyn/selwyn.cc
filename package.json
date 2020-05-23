@@ -34,7 +34,7 @@
     "postcss-pseudo-class-enter": "^5.0.0"
   },
   "engines": {
-    "node": ">9"
+    "node": ">= 10"
   },
   "author": "Selwyn <talk@selwyn.cc> (https://selwyn.cc/)",
   "license": "All Rights Reserved",
