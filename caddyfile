@@ -21,6 +21,10 @@ selwyn.cc {
     Referrer-Policy "no-referrer-when-downgrade"
   }
 
+  errors stderr {
+    404 ./404.html
+  }
+
   proxy /cheers-receiver cheers-receiver:3293
   ratelimit post /cheers-receiver 5 5 minute
   gzip {
