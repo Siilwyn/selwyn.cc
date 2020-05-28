@@ -1,21 +1,25 @@
 @import '../core/styles/variables.css';
 
 .contact {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    max-width: 80rem;
+
     min-height: 15em;
-    padding-right: 1rem;
-    padding-left: 1rem;
-    background: var(--brand-light);
-    color: var(--white);
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    background: var(--white);
+    color: var(--black);
 }
 
 .contact-title {
-    display: none;
+    display: block;
+    width: 100%;
 }
 
 .contact-list {
+    display: flex;
+    flex-direction: column;
     font-size: 2rem;
     text-align: left;
 }
@@ -35,10 +39,9 @@
     margin-right: 1rem;
 }
 
-@media (--m-viewport) {
+@media (--l-viewport) {
     .contact {
         min-height: 7.5em;
-        padding: 0;
     }
 
     .contact-list {
@@ -46,14 +49,8 @@
         flex-direction: row;
         flex-grow: 1;
         align-items: center;
-        justify-content: space-around;
+        justify-content: space-between;
         width: 100%;
         max-width: 100%;
-    }
-}
-
-@media (--l-viewport) {
-    .contact-list {
-        max-width: 75rem;
     }
 }
