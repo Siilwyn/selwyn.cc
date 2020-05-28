@@ -14,7 +14,7 @@
     line-height: 1.75em;
 }
 
-.writing-date {
+.writing-meta {
     color: var(--brand-default);
     font-family: monospace;
     font-size: 1.2em;

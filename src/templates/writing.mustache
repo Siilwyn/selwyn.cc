@@ -14,8 +14,10 @@
 
     <div class="writing-header">
         <h1 class="writing-title">{{ title }}</h1>
-        <time class="writing-date">
-            {{ date }}
+        <span class="writing-meta">
+            <time>
+                {{ date }}
+            </time>
             /
             <a
                 class="writing-rss"
@@ -24,7 +26,7 @@
                 href="/feed.json">
                 RSS Feed
             </a>
-        </time>
+        </span>
     </div>
 
     <main class="writing-content">
