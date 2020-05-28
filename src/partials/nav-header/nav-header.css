@@ -21,6 +21,7 @@
     justify-content: flex-start;
     padding: 1rem;
     font-size: 1.1em;
+    font-weight: bold;
     white-space: nowrap;
 }
 
