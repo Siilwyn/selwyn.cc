@@ -76,8 +76,12 @@ gulp.task('build:html', function() {
 gulp.task('build:css', function() {
   var cssProcessors = [
     cssImport(),
-    customProperties(),
-    customMedia(),
+    customProperties({
+      importFrom: './src/partials/core/styles/variables.css',
+    }),
+    customMedia({
+      importFrom: './src/partials/core/styles/variables.css',
+    }),
     autoprefixer({
       remove: false,
     }),

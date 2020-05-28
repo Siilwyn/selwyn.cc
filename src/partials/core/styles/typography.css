@@ -1,5 +1,3 @@
-@import 'variables.css';
-
 body {
     background: var(--white);
     font-family: Georgia, 'Times New Roman', serif;
