@@ -3,14 +3,13 @@
     position: relative;
     flex-direction: column;
     align-items: center;
-    padding: 0 0.75em;
+    padding: 1.4rem 0.75em;
     background: var(--white);
 }
 
 .about-column {
     width: 100%;
     max-width: 37.5rem;
-    margin-bottom: 1em;
 }
 
 .about-photo {
