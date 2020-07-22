@@ -15,7 +15,7 @@
     "clean": "find ./dist ! -type d -delete"
   },
   "devDependencies": {
-    "autoprefixer": "^9.8.4",
+    "autoprefixer": "^9.8.5",
     "browser-sync": "^2.26.7",
     "css-declaration-sorter": "^5.1.2",
     "front-matter": "^3.2.1",
