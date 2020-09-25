@@ -29,7 +29,7 @@
     "gulp-tap": "^2.0.0",
     "postcss-clean": "^1.0.0",
     "postcss-custom-media": "^7.0.8",
-    "postcss-custom-properties": "^9.1.1",
+    "postcss-custom-properties": "^9.2.0",
     "postcss-import": "^12.0.1",
     "postcss-pseudo-class-enter": "^5.0.0"
   },
