@@ -12,7 +12,6 @@ const image = require('gulp-image');
 const rename = require('gulp-rename');
 const tap = require('gulp-tap');
 
-const autoprefixer = require('autoprefixer');
 const customProperties = require('postcss-custom-properties');
 const cssImport = require('postcss-import');
 const cssClean = require('postcss-clean');
@@ -81,9 +80,6 @@ gulp.task('build:css', function() {
     }),
     customMedia({
       importFrom: './src/partials/core/styles/variables.css',
-    }),
-    autoprefixer({
-      remove: false,
     }),
     cssClean(),
     pseudoClassEnter(),
