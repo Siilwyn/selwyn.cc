@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "browser-sync": "^2.26.13",
-    "css-declaration-sorter": "^5.1.2",
+    "css-declaration-sorter": "^6.0.1",
     "front-matter": "^4.0.2",
     "gulp": "^4.0.2",
     "gulp-htmlmin": "^5.0.0",
