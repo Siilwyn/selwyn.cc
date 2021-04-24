@@ -1,15 +1,19 @@
 :root {
-  --black: #121313;
-  --brand-alt: #3a3335;
-  --brand-default: #1f7b8d;
-  --brand-light: #2fa9c7;
-  --brand-highlight: #d1642c;
-  --white: #f6f9fa;
+  --color-background: hsl(195, 28.6%, 97.3%);
+  --color-border: hsl(343, 6.4%, 21.4%);
+  --color-border-alt: hsla(192, 76%, 80%, 0.4);
+  --color-text-default: hsl(180, 2.7%, 7.3%);
+  --color-base: hsl(195, 28.6%, 97.3%);
+  --color-accent: hsl(192, 61.8%, 48.2%);
 }
 
-@custom-media --xs-viewport (min-width: 20em);
-/* colors */
-@custom-media --s-viewport (min-width: 39em);
-@custom-media --m-viewport (min-width: 50em);
-@custom-media --l-viewport (min-width: 78em);
-@custom-media --xl-viewport (min-width: 100em);
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: rgb(55, 53, 53);
+    --color-border: rgb(226, 97, 0);
+    --color-border-alt: hsla(193, 100%, 75%, 0.4);
+    --color-text-default: hsl(196, 28.6%, 97.3%);
+    --color-base: hsl(181, 2.7%, 7.3%);
+    --color-accent: hsl(196, 28.6%, 97.3%);
+  }
+}

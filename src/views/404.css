@@ -1,29 +1,25 @@
 .error {
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    height: 100vh;
-    min-height: 10em;
-    padding: 1rem;
-    background-color: var(--brand-light);
-    background-image: url('/assets/media/shattered-blue-curved-contrast.jpg');
-    color: var(--white);
-}
-
-.error-body {
-    max-width: 50rem;
-    margin: 0 auto;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  max-width: unset;
+  height: 100vh;
+  min-height: 10em;
+  margin: 0;
+  padding: 1rem;
+  color: var(--color-base);
 }
 
 .error-title {
-    font-family: monospace;
-    font-size: 10rem;
-    letter-spacing: 2rem;
-    text-shadow:
-        0.25rem 0.25rem 0 red,
-        0.5rem 0.5rem 0 green,
-        0.75rem 0.75rem 0 blue,
-        1rem 1rem 0 rgba(255, 0, 0, 0.5),
-        1.25rem 1.25rem 0 rgba(0, 255, 0, 0.5),
-        1.5rem 1.5rem 0 rgba(0, 0, 255, 0.5);
+  font-family: monospace;
+  font-size: 10rem;
+  letter-spacing: 2rem;
+  text-shadow:
+    0.25rem 0.25rem 0 red,
+    0.5rem 0.5rem 0 green,
+    0.75rem 0.75rem 0 blue,
+    1rem 1rem 0 rgba(255, 0, 0, 0.5),
+    1.25rem 1.25rem 0 rgba(0, 255, 0, 0.5),
+    1.5rem 1.5rem 0 rgba(0, 0, 255, 0.5);
 }

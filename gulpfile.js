@@ -8,14 +8,11 @@ const matter = require('front-matter');
 const mustache = require('gulp-mustache');
 const htmlmin = require('gulp-htmlmin');
 const postcss = require('gulp-postcss');
-const image = require('gulp-image');
 const rename = require('gulp-rename');
 const tap = require('gulp-tap');
 
-const customProperties = require('postcss-custom-properties');
 const cssImport = require('postcss-import');
 const cssClean = require('postcss-clean');
-const customMedia = require('postcss-custom-media');
 const declarationSorter = require('css-declaration-sorter');
 const pseudoClassEnter = require('postcss-pseudo-class-enter');
 
@@ -36,7 +33,7 @@ const paths = {
     dist: './dist/js',
   },
   media: {
-    src: './src/assets/media/*.{svg,png,jpg,gif,mp4}',
+    src: './src/assets/media/*.{svg,jpg}',
     dist: './dist/assets/media',
   },
   fonts: {
@@ -75,12 +72,6 @@ gulp.task('build:html', function() {
 gulp.task('build:css', function() {
   var cssProcessors = [
     cssImport(),
-    customProperties({
-      importFrom: './src/partials/core/styles/variables.css',
-    }),
-    customMedia({
-      importFrom: './src/partials/core/styles/variables.css',
-    }),
     cssClean(),
     pseudoClassEnter(),
   ];
@@ -117,7 +108,6 @@ gulp.task('build:media', function() {
     .src(paths.media.src, {
       since: gulp.lastRun('build:media'),
     })
-    .pipe(image({ concurrent: 1 }))
     .pipe(gulp.dest(paths.media.dist));
 });
 
@@ -147,7 +137,10 @@ gulp.task('build:writings', function() {
         file.attributes = parsedContents.attributes;
       })
     )
-    .pipe(markdown())
+    .pipe(markdown({
+      smartypants: true,
+      gfm: true,
+    }))
     .pipe(
       tap(function(file, t) {
         const filePath = path.parse(file.path);
@@ -219,7 +212,7 @@ gulp.task('watch:media', function(done) {
 
 gulp.task('watch:writings', function(done) {
   gulp.watch(
-    [paths.writings.src, paths.html.partials, paths.js.src],
+    [paths.writings.template, paths.writings.src, paths.html.partials, paths.js.src],
     gulp.task('build:writings')
   );
   done();
@@ -256,13 +249,13 @@ gulp.task('format', gulp.parallel(['format:css']));
 
 gulp.task('server', function(done) {
   server.init({
+    open: false,
     server: {
       baseDir: './dist/',
       serveStaticOptions: {
         extensions: ['html'],
       },
     },
-    browser: 'chromium-browser',
   });
 
   done();

@@ -5,37 +5,37 @@
 {{> ../partials/head/head }}
 
 <body>
-
-    {{> ../partials/nav-header/nav-header }}
-
-    {{> ../partials/header/header }}
-
-    <link rel="stylesheet" href="/css/writing.css">
-
-    <div class="writing-header">
-        <h1 class="writing-title">{{ title }}</h1>
-        <span class="writing-meta">
-            <time>
-                {{ date }}
-            </time>
-            /
-            <a
-                class="writing-rss"
-                rel="alternate"
-                type="application/json"
-                href="/feed.json">
-                RSS Feed
-            </a>
-        </span>
+  <link rel="stylesheet" href="/css/writing.css">
+  <nav class="writing-navigation image-bg-shattered">
+    <div class="container">
+      <a class="writing-navigation-item" href="/">Home</a>
     </div>
+  </nav>
 
-    <main class="writing-content">
+  <header class="writing-header">
+    <h1 class="writing-title">{{ title }}</h1>
+    <div class="writing-meta">
+      <a
+        class="writing-meta-feed anchor--bold anchor--block"
+        rel="alternate"
+        type="application/json"
+        href="/feed.json"
+      >
+        RSS Feed
+      </a>
+      <span aria-hidden="true">\</span>
+      <time>{{ date }}</time>
+    </div>
+  </header>
+
+
+  <main class="writing-content container">
 
 {{> writing-content }}
 
-    </main>
+  </main>
 
-    {{> ../partials/cheers/cheers }}
+  {{> ../partials/cheers/cheers }}
 
 </body>
 

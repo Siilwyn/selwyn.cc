@@ -1,6 +1,9 @@
 # Selwyn.cc
 My personal website.
 
+## General Prerequisites
+Node.js, [latest LTS is recommended](https://nodejs.org/en/about/releases/).
+
 ## Quick start
 
 ### Setup
@@ -12,7 +15,7 @@ npm ci
 
 ### Running
 ```sh
-npm start
+npm run dev
 ```
 
 ## Production

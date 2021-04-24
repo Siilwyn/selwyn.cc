@@ -1,26 +1,42 @@
-.slanted::before, .slanted::after {
-    display: none;
-    z-index: -1;
-    position: absolute;
-    right: 0;
-    left: 0;
-    height: 50%;
-    backface-visibility: hidden;
-    background: inherit;
-    box-shadow: 1px -3px 4rem 1px rgba(0, 0, 0, 0.3);
-    content: '';
+.screen-reader-only {
+  clip: rect(0, 0, 0, 0);
+	position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border-width: 0;
+  white-space: nowrap;
 }
 
-.slanted-top:before {
-    display: block;
-    top: 0;
-    transform: skewY(1.5deg);
-    transform-origin: 100% 0;
+.container {
+  width: 85%;
+  max-width: 40rem;
+  margin-right: auto;
+  margin-left: auto;
 }
 
-.slanted-bottom:after {
-    display: block;
-    bottom: 0;
-    transform: skewY(-1.5deg);
-    transform-origin: 100%;
+.image-bg-shattered {
+  background: linear-gradient(
+    0deg,
+    hsla(171, 57%, 61%, 0.6) -15%, hsla(153, 82%, 79%, 0.4) 80%),
+    url('/assets/media/shattered-blue.jpg'
+  );
+}
+
+.intro {
+  margin-bottom: 2rem;
+  padding-top: 2.2rem;
+  padding-bottom: 6rem;
+}
+
+.intro-title {
+  max-width: 32rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .intro-title {
+    color: var(--color-base);
+  }
 }

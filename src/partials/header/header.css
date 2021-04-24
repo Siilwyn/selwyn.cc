@@ -1,7 +1,0 @@
-.header {
-    display: flex;
-    justify-content: center;
-    min-height: 10em;
-    background-color: var(--brand-light);
-    background-image: url('/assets/media/shattered-blue-curved-contrast.jpg');
-}

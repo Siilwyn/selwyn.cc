@@ -1,40 +1,9 @@
-.writings-overview-container {
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 25rem;
-    background: var(--brand-alt);
+.writings-overview-item {
+  margin-bottom: 1rem;
 }
 
-.writings-overview-link {
-    text-decoration: none;
-}
-
-.writings-overview-caption {
-    color: var(--white);
-    text-align: center;
-}
-
-.writings-overview-title {
-    max-width: 37.5rem;
-    margin: 0.4rem 0.75rem 0.2rem 0.75rem;
-    padding: 0;
-    border-bottom: 2px solid;
-}
-
-.writings-overview-description {
-    margin: 0 0.75rem;
-    padding: 0;
-}
-
-@media (--l-viewport) {
-    .writings-overview-container {
-        font-size: 1.2rem;
-    }
-
-    .writings-overviews-title {
-        margin-left: 1.5rem;
-    }
+.writings-overview-item-time {
+  display: block;
+  padding-top: 0.2rem;
+  font-style: italic;
 }

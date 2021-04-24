@@ -1,5 +1,37 @@
-@import 'styles/reset';
 @import 'styles/variables';
-@import 'styles/typography';
 @import 'styles/helpers';
-@import 'styles/section';
+@import 'styles/typography';
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-width: 24rem;
+  min-height: 100vh;
+  background: var(--color-background);
+  color: var(--color-text-default);
+  font-family: sans-serif;
+  line-height: 1.6;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    line-height: 1.7;
+    word-spacing: 0.05em;
+  }
+}
+
+img, video {
+    display: block;
+    max-width: 100%;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-base);
+}

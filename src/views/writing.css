@@ -1,58 +1,91 @@
 .writing-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-right: 1.25rem;
-    padding-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-right: 1.25rem;
+  padding-left: 1.25rem;
+}
+
+.writing-navigation {
+  width: 100%;
+  margin-bottom: 4rem;
+  padding: 1rem;
+  font-weight: 600;
+}
+
+@media (prefers-color-scheme: dark) {
+  .writing-navigation {
+    color: var(--color-base);
+  }
+}
+
+.writing-navigation-item {
+  padding-bottom: 0.2rem;
+  background: none;
+  text-decoration: none;
+}
+
+.writing-navigation-item::before {
+  margin-right: 0.4rem;
+  text-decoration: none;
+  content: "//";
 }
 
 .writing-title {
-    font-family: 'Elrotex';
-    font-size: 4em;
-    line-height: 1.75em;
+  font-family: 'Elrotex';
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 400;
 }
 
 .writing-meta {
-    color: var(--brand-default);
-    font-family: monospace;
-    font-size: 1.2em;
+  display: inline;
+  margin-bottom: 2rem;
+  color: var(--color-text-default);
+  font-family: monospace;
+}
+
+.writing-meta-feed {
+  margin-right: 0.6rem;
 }
 
 .writing-content {
-    max-width: 40em;
-    margin-right: auto;
-    margin-bottom: 6rem;
-    margin-left: auto;
-    padding: 0 1rem;
-}
-
-.writing-content p {
-    font-size: 1.3em;
-}
-
-.writing-content > p > code {
-    padding: 0 0.01em;
-    background-color: #fff;
+  margin-bottom: 6rem;
+  font-size: 1.1rem;
 }
 
 .writing-content pre {
-    display: block;
-    margin-bottom: 1em;
-    padding: 0.75em 1em;
-    overflow: scroll;
-    background: var(--black);
-    color: var(--white);
+  display: block;
+  margin-bottom: 1em;
+  padding: 0.75em 1em;
+  background: var(--color-text-default);
+  color: var(--color-base);
+}
+
+@media (prefers-color-scheme: dark) {
+  .writing-content pre {
+    background: var(--color-base);
+    color: var(--color-text-default);
+  }
+}
+
+.writing-content > p > code {
+  color: var(--color-accent);
+}
+
+@media (prefers-color-scheme: dark) {
+  .writing-content > p > code {
+    color: var(--color-border);
+  }
 }
 
 .writing-content table {
-    margin-bottom: 1em;
+  margin-bottom: 1em;
 }
 
 @font-face {
-    src: url('/assets/fonts/elrotex.woff2') format('woff2'),
-         url('/assets/fonts/elrotex.ttf') format('truetype'),
-         url('/assets/fonts/elrotex.svg') format('svg');
-    font-family: 'Elrotex';
-    font-style: normal;
-    font-weight: normal;
+  src: url('/assets/fonts/elrotex-regular-latin.woff2') format('woff2');
+  font-family: 'Elrotex';
+  font-style: normal;
+  font-weight: 400;
 }

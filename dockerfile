@@ -1,4 +1,4 @@
-FROM node:10-slim
+FROM node:14-slim
 
 WORKDIR /app
 
@@ -9,7 +9,7 @@ COPY ["caddyfile", "./Caddyfile"]
 
 # Install app dependencies
 COPY ["package.json", "package-lock.json", "./"]
-RUN ["npm", "ci"]
+RUN ["npm", "ci", "--ignore-scripts"]
 
 # Bundle app source
 COPY ["./src/", "./src/"]
