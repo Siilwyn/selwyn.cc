@@ -21,7 +21,7 @@
     "gulp-tap": "^2.0.0",
     "postcss": "^8.2.8",
     "postcss-clean": "^1.2.2",
-    "postcss-import": "^12.0.1",
+    "postcss-import": "^14.0.2",
     "postcss-pseudo-class-enter": "^5.0.0"
   },
   "engines": {
