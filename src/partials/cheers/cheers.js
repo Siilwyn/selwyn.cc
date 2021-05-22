@@ -28,13 +28,14 @@ fetch(pageUrl)
 
       fetch(pageUrl, {
         method: 'post',
-      }).then(response => {
-        if (!response.ok) throw Error(response.statusText);
+      })
+        .then(response => {
+          if (!response.ok) throw Error(response.statusText);
 
-        localStorage.setItem('cheers', JSON.stringify(cheers.concat(pageKey)));
-        sayCheersCount.innerText = count + 1;
-        sayCheersSubmit.classList.add('active');
-      });
+          localStorage.setItem('cheers', JSON.stringify(cheers.concat(pageKey)));
+          sayCheersCount.innerText = count + 1;
+          sayCheersSubmit.classList.add('active');
+        });
     });
   }, { once: true })
   .catch(console.error);

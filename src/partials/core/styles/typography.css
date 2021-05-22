@@ -29,7 +29,8 @@ h5, .h5  {
   font-size: 1.2rem;
 }
 
-a {
+.anchor,
+.writing-content a {
   display: inline-block;
   position: relative;
   padding-right: 0.2em;
@@ -43,17 +44,20 @@ a {
 }
 
 @media (prefers-color-scheme: dark) {
-  a {
+  .anchor,
+  .writing-content a {
     color: var(--color-text-default);
   }
 }
 
-a:enter {
+.anchor:enter,
+.writing-content a:enter {
   outline: none;
   box-shadow: 0 0 0 4px var(--color-border-alt);
 }
 
-a:active {
+.anchor:active,
+.writing-content a:active {
   transform: scale(0.92);
 }
 

@@ -8,10 +8,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Century Gothic', sans-serif;
 }
 
 .cheers-info {
+  margin-bottom: 0;
   padding-bottom: 0;
   font-size: 1.5em;
   font-variant: all-small-caps;
@@ -36,7 +36,7 @@
   color: var(--white);
   font-size: 0.8em;
   cursor: pointer;
-  transition: transform 500ms ease;
+  transition: transform 500ms ease-out;
   will-change: transform;
 }
 
@@ -63,7 +63,9 @@
   left: -2rem;
   padding: 1rem;
   border-radius: 50%;
-  background: var(--color-border);
+  background: var(--color-accent);
+  color: var(--color-base);
+  font-size: 1.4rem;
   content: "+1";
   opacity: 0;
 }
@@ -96,7 +98,6 @@
 
 .count-send {
   display: none;
-  background-color: red;
   transition: background-color 2s;
 }
 
@@ -109,7 +110,7 @@
   justify-content: center;
   width: 100%;
   height: 100%;
-  background-color: var(--color-base);
+  background-color: var(--color-background);
   font-size: 1.75em;
   font-style: italic;
 }

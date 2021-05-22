@@ -33,6 +33,7 @@
 
 .intro-title {
   max-width: 32rem;
+  font-weight: 700;
 }
 
 @media (prefers-color-scheme: dark) {

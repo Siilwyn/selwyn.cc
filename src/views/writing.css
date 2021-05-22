@@ -25,6 +25,12 @@
   text-decoration: none;
 }
 
+@media (prefers-color-scheme: dark) {
+  .writing-navigation-item {
+    color: var(--color-base);
+  }
+}
+
 .writing-navigation-item::before {
   margin-right: 0.4rem;
   text-decoration: none;
