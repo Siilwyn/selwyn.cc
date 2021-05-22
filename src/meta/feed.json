@@ -1,5 +1,5 @@
 {
-    "version": "https://jsonfeed.org/version/1",
+    "version": "https://jsonfeed.org/version/1.1",
     "title": "Selwyn's writings",
     "home_page_url": "https://selwyn.cc/",
     "feed_url": "https://selwyn.cc/feed.json",
