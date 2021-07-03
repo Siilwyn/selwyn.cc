@@ -12,8 +12,8 @@
 }
 
 .error-title {
-  font-family: monospace;
   font-size: 10rem;
+  font-family: monospace;
   letter-spacing: 2rem;
   text-shadow:
     0.25rem 0.25rem 0 red,

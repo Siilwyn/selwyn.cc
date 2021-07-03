@@ -33,15 +33,15 @@
 
 .writing-navigation-item::before {
   margin-right: 0.4rem;
-  text-decoration: none;
   content: "//";
+  text-decoration: none;
 }
 
 .writing-title {
-  font-family: 'Elrotex';
-  font-size: 3rem;
   font-style: normal;
   font-weight: 400;
+  font-size: 3rem;
+  font-family: 'Elrotex';
 }
 
 .writing-meta {
@@ -90,8 +90,8 @@
 }
 
 @font-face {
-  src: url('/assets/fonts/elrotex-regular-latin.woff2') format('woff2');
-  font-family: 'Elrotex';
   font-style: normal;
   font-weight: 400;
+  src: url('/assets/fonts/elrotex-regular-latin.woff2') format('woff2');
+  font-family: 'Elrotex';
 }

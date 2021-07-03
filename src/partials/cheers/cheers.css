@@ -13,8 +13,8 @@
 .cheers-info {
   margin-bottom: 0;
   padding-bottom: 0;
-  font-size: 1.5em;
   font-variant: all-small-caps;
+  font-size: 1.5em;
 }
 
 .cheers-info-count {
@@ -64,16 +64,16 @@
   padding: 1rem;
   border-radius: 50%;
   background: var(--color-accent);
+  content: "+1";
   color: var(--color-base);
   font-size: 1.4rem;
-  content: "+1";
   opacity: 0;
 }
 
 .cheers-button.active::after {
   display: initial;
-  animation-name: pop-out;
   animation-duration: 2s;
+  animation-name: pop-out;
 }
 
 @keyframes pop-out {
@@ -111,6 +111,6 @@
   width: 100%;
   height: 100%;
   background-color: var(--color-background);
-  font-size: 1.75em;
   font-style: italic;
+  font-size: 1.75em;
 }
