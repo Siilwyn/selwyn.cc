@@ -1,0 +1,22 @@
+www.{$DOMAIN:localhost} {
+  redir https://{$DOMAIN:localhost}{uri}
+}
+
+{$DOMAIN:localhost} {
+  root * dist
+  reverse_proxy /cheers-receiver cheers-receiver:3293
+  file_server
+  try_files {path}.html {path}
+
+  header {
+    Strict-Transport-Security max-age=31536000;
+    X-Content-Type-Options nosniff
+    X-Frame-Options DENY
+    Referrer-Policy no-referrer-when-downgrade
+  }
+
+  handle_errors {
+    rewrite * /404.html
+    file_server
+  }
+}

@@ -1,15 +1,14 @@
-FROM node:14-slim
+FROM node:16-alpine
 
 WORKDIR /app
 
 # Install server
-RUN apt update && apt install -y curl build-essential autoconf
-RUN CADDY_TELEMETRY=on curl https://getcaddy.com | bash -s personal http.git,http.ratelimit
-COPY ["caddyfile", "./Caddyfile"]
+RUN apk add --no-cache caddy
+COPY ["Caddyfile", "./Caddyfile"]
 
 # Install app dependencies
 COPY ["package.json", "package-lock.json", "./"]
-RUN ["npm", "ci", "--ignore-scripts"]
+RUN ["npm", "ci", "--ignore-scripts", "--no-audit"]
 
 # Bundle app source
 COPY ["./src/", "./src/"]
@@ -17,5 +16,6 @@ COPY ["./gulpfile.js", "./gulpfile.js"]
 ENV NODE_ENV production
 RUN ["npm", "run", "build"]
 
-EXPOSE ${PORT:-2015}
-CMD ["caddy", "-root", "dist", "-agree"]
+EXPOSE ${PORT:-443}
+ENV DOMAIN selwyn.cc
+CMD ["caddy", "run"]
