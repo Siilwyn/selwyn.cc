@@ -29,6 +29,10 @@ h5, .h5  {
   font-size: 1.2rem;
 }
 
+.nowrap {
+  white-space: nowrap;
+}
+
 .anchor,
 .writing-content a {
   display: inline-block;
