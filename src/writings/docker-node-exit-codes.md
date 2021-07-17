@@ -44,16 +44,10 @@ Running the server in the terminal with `npm start` and sending the `SIGINT` sig
 
 Exit signals received by Docker are passed to the main process, the process on PID 1. When running with npm, npm becomes the main process. This is visible by running `top` in the container to list running processes:
 
-<kbd>
-
 ```shell
 docker run --detach --name server exampleServer
 docker exec -it server top
 ```
-
-</kbd>
-
-<samp>
 
 ```
 | PID | COMMAND |
@@ -63,8 +57,6 @@ docker exec -it server top
 |  23 | sh |
 |  29 | top |
 ```
-
-</samp>
 
 As it turns out, npm spawns the server as a child process, but does not pass received exit signals. By changing the last line in the `dockerfile` to `CMD [ "node", "src/server.js" ]`, Node.js is called directly and thus removes npm from this process. Now repeating the test from before: running the server with docker and exiting gives the expected `Closing server` output, hooray!
 
