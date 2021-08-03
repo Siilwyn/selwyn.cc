@@ -9,7 +9,7 @@
     "format": "gulp format"
   },
   "devDependencies": {
-    "browser-sync": "^2.27.4",
+    "browser-sync": "^2.27.5",
     "css-declaration-sorter": "^6.0.3",
     "front-matter": "^4.0.2",
     "gulp": "^4.0.2",
