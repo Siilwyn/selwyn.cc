@@ -2,10 +2,12 @@
 @import 'styles/helpers';
 @import 'styles/typography';
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -13,16 +15,18 @@ body {
   flex-direction: column;
   min-width: 24rem;
   min-height: 100vh;
-  background: var(--color-background);
-  color: var(--color-text-default);
+  background: var(--color-gray-100);
+  color: var(--color-gray-1000);
   line-height: 1.6;
   font-family: sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
   body {
+    background: var(--color-gray-800);
+    color: var(--color-gray-100);
     line-height: 1.7;
-    word-spacing: 0.05em;
+    word-spacing: 0.02em;
   }
 }
 
@@ -32,6 +36,6 @@ img, video {
 }
 
 ::selection {
-  background: var(--color-accent);
-  color: var(--color-base);
+  background: var(--color-blue-400);
+  color: var(--color-gray-100);
 }

@@ -12,7 +12,7 @@
 
 .container {
   width: 85%;
-  max-width: 40rem;
+  max-width: 65ch;
   margin-right: auto;
   margin-left: auto;
 }
@@ -38,6 +38,6 @@
 
 @media (prefers-color-scheme: dark) {
   .intro-title {
-    color: var(--color-base);
+      color: var(--color-gray-1000);
   }
 }
