@@ -3,7 +3,7 @@ FROM node:16-alpine
 WORKDIR /app
 
 # Install server
-RUN apk add --no-cache caddy
+RUN ["apk", "add", "--no-cache", "caddy"]
 COPY ["Caddyfile", "./Caddyfile"]
 
 # Install app dependencies
