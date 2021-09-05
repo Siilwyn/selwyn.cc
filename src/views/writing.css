@@ -29,8 +29,16 @@
 
 @media (prefers-color-scheme: dark) {
   .writing-navigation-item {
-    color: var(--color-gray-100);
+    color: var(--color-gray-800);
   }
+}
+
+.writing-navigation-item:enter {
+  box-shadow: none;
+}
+
+.writing-navigation-item:focus-visible {
+  box-shadow: 0 0 0 4px var(--color-gray-100);
 }
 
 .writing-navigation-item::before {
