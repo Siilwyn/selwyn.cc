@@ -4,7 +4,7 @@ www.{$DOMAIN:localhost} {
 
 {$DOMAIN:localhost} {
   root * dist
-  reverse_proxy /cheers-receiver cheers-receiver:3293
+  reverse_proxy /cheers-receiver http://localhost:3293
   file_server
   try_files {path}.html {path}
 
