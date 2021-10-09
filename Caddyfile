@@ -9,7 +9,7 @@ www.{$DOMAIN:localhost} {
   try_files {path}.html {path}
 
   header {
-    Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+    Strict-Transport-Security max-age=63072000; includeSubDomains; preload
     X-Content-Type-Options nosniff
     X-Frame-Options DENY
     Referrer-Policy no-referrer-when-downgrade
