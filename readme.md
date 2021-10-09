@@ -7,10 +7,9 @@ Node.js, [latest LTS is recommended](https://nodejs.org/en/about/releases/).
 ## Quick start
 
 ### Setup
+Clone the repository, and install dependencies from the project root with:
 ```sh
-git clone git@github.com:Siilwyn/selwyn.cc.git
-cd selwyn.cc
-npm ci
+npm ci --no-scripts
 ```
 
 ### Running
