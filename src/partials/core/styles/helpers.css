@@ -26,7 +26,11 @@
 }
 
 .intro {
+  width: 100%;
+  max-width: 100rem;
+  margin-right: auto;
   margin-bottom: 2rem;
+  margin-left: auto;
   padding-top: 2.2rem;
   padding-bottom: 6rem;
 }
