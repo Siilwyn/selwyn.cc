@@ -5,6 +5,13 @@
     "feed_url": "https://selwyn.cc/feed.json",
     "items": [
         {
+            "id": "exploring-serverless-edge",
+            "url": "https://selwyn.cc/writings/exploring-serverless-edge",
+            "title": "Exploring the serverless edge",
+            "content_text": "Serverless functions have been around for years but their ‘surroundings’ are still in flux. With a focus on developer experience: Firstly by making them easy to run and test locally by emulating the production environment. Secondly by integrating with Git, using automatic production and pull request deploys. Thirdly with service combinations, like static file hosting and analytics. These together make serverless functions more useful, but edge workers are starting to catch up.",
+            "date_published": "2021-11-18T00:00:00.000Z"
+        },
+        {
             "id": "docker-node-exit-codes",
             "url": "https://selwyn.cc/writings/docker-node-exit-codes",
             "title": "Docker, Node and exit codes",
