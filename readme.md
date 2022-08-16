@@ -9,7 +9,7 @@ Node.js, [latest LTS is recommended](https://nodejs.org/en/about/releases/).
 ### Setup
 Clone the repository, and install dependencies from the project root with:
 ```sh
-npm ci --no-scripts
+npm ci --ignore-scripts
 ```
 
 ### Running
