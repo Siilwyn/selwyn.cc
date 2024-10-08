@@ -1,4 +1,4 @@
-FROM node:16-alpine
+FROM node:20-alpine
 
 WORKDIR /app
 
@@ -8,7 +8,7 @@ COPY ["Caddyfile", "./Caddyfile"]
 
 # Install app dependencies
 COPY ["package.json", "package-lock.json", "./"]
-RUN ["npm", "ci", "--ignore-scripts", "--no-audit"]
+RUN ["npm", "ci", "--ignore-scripts", "--no-audit", "--no-fund"]
 
 # Bundle app source
 COPY ["./src/", "./src/"]

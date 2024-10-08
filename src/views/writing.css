@@ -49,16 +49,17 @@
 
 .writing-title {
   font-style: normal;
-  font-weight: 400;
+  font-weight: 900;
   font-size: 3rem;
-  font-family: 'Elrotex';
+  font-family: 'Inter', sans-serif;
 }
 
 @font-face {
-  font-style: normal;
-  font-weight: 400;
-  src: url('/assets/fonts/elrotex-regular-latin.woff2') format('woff2');
-  font-family: 'Elrotex';
+	font-style: normal;
+	font-weight: 900;
+	src: local("Inter Black"), local("Inter-Black"), url('/assets/fonts/inter-black-custom.woff2') format("woff2");
+	font-family: 'Inter';
+	unicode-range: U+20,U+2C,U+41-5A,U+61-7A;
 }
 
 .writing-meta {
