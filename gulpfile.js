@@ -1,22 +1,22 @@
-'use strict';
+import gulp from 'gulp';
+import path from 'node:path';
 
-const gulp = require('gulp');
-const path = require('path');
+import markdown from 'gulp-markdown';
+import matter from 'front-matter';
+import mustache from 'gulp-mustache';
+import htmlmin from 'gulp-htmlmin';
+import postcss from 'gulp-postcss';
+import rename from 'gulp-rename';
+import tap from 'gulp-tap';
 
-const markdown = require('gulp-markdown');
-const matter = require('front-matter');
-const mustache = require('gulp-mustache');
-const htmlmin = require('gulp-htmlmin');
-const postcss = require('gulp-postcss');
-const rename = require('gulp-rename');
-const tap = require('gulp-tap');
+import cssImport from 'postcss-import';
+import cssClean from 'postcss-clean';
+import declarationSorter from 'css-declaration-sorter';
+import pseudoClassEnter from 'postcss-pseudo-class-enter';
 
-const cssImport = require('postcss-import');
-const cssClean = require('postcss-clean');
-const declarationSorter = require('css-declaration-sorter');
-const pseudoClassEnter = require('postcss-pseudo-class-enter');
+import browserSync from 'browser-sync';
 
-const server = require('browser-sync').create();
+const server = browserSync.create();
 
 const paths = {
   html: {
@@ -70,7 +70,7 @@ gulp.task('build:html', function() {
 });
 
 gulp.task('build:css', function() {
-  var cssProcessors = [
+  const cssProcessors = [
     cssImport(),
     cssClean(),
     pseudoClassEnter(),
@@ -107,6 +107,7 @@ gulp.task('build:media', function() {
   return gulp
     .src(paths.media.src, {
       since: gulp.lastRun('build:media'),
+      encoding: false,
     })
     .pipe(gulp.dest(paths.media.dist));
 });
@@ -115,6 +116,7 @@ gulp.task('build:fonts', function() {
   return gulp
     .src(paths.fonts.src, {
       since: gulp.lastRun('build:fonts'),
+      encoding: false,
     })
     .pipe(gulp.dest(paths.fonts.dist));
 });
