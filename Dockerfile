@@ -16,6 +16,6 @@ COPY ["./gulpfile.js", "./gulpfile.js"]
 ENV NODE_ENV production
 RUN ["npm", "run", "build"]
 
-EXPOSE ${PORT:-443}
+EXPOSE 8080
 ENV DOMAIN selwyn.cc
 CMD ["caddy", "run"]

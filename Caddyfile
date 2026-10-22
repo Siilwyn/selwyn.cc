@@ -3,6 +3,9 @@
 }
 
 :8080 {
+	@www host www.{$DOMAIN}
+	redir @www https://{$DOMAIN}{uri} permanent
+
 	root * dist
 	reverse_proxy /cheers-receiver/* http://localhost:3293
 	file_server
